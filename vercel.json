@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "buildCommand": "npx nx build admin-app",
+  "outputDirectory": "apps/admin-app/.next",
+  "installCommand": "npm install",
+  "framework": "nextjs"
+}
+
