@@ -32,8 +32,20 @@ git push origin main
    - **Install Command**: `npm install`
 4. Click Deploy
 
+### For Widget App:
+1. Create a new project in Vercel
+2. Import the same repository
+3. Configure:
+   - **Framework Preset**: Next.js
+   - **Root Directory**: (leave empty)
+   - **Build Command**: `npx nx build widget-app`
+   - **Output Directory**: `apps/widget-app/.next`
+   - **Install Command**: `npm install`
+4. Click Deploy
+
 ## Important Notes
 
 - Each app needs to be a separate Vercel project
 - Node.js version should be 18+ (set in Vercel project settings)
 - The root `vercel.json` is for reference only - configure in Vercel Dashboard
+- Widget App can be embedded as iframe or used as standalone service
