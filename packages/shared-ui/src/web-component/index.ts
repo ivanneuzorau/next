@@ -9,5 +9,5 @@ export { default } from './pipelines-web-component';
 
 // Export CDN loader utilities
 export { loadWebComponent, isWebComponentLoaded } from './loader';
-export { WebComponentLoader } from './loader';
+export { WebComponentLoader } from './web-component-loader';
 

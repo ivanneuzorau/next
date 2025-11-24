@@ -11,12 +11,12 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "project": "packages/shared-ui/package.json",
-        "entryFile": "packages/shared-ui/src/web-component/standalone.ts",
+        "entryFile": "packages/shared-ui/src/web-component/standalone.tsx",
         "outputPath": "dist/packages/shared-ui/web-component",
-        "tsConfig": "packages/shared-ui/tsconfig.lib.json",
-        "rollupConfig": "packages/shared-ui/rollup.web-component.config.cjs",
+        "tsConfig": "packages/shared-ui/tsconfig.standalone.json",
+        "rollupConfig": "packages/shared-ui/rollup.standalone.config.cjs",
         "compiler": "babel",
-        "format": ["iife"],
+        "skipTypeCheck": true,
         "outputFileName": "sk8-pipelines.js"
       }
     }

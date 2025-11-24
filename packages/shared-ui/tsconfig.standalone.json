@@ -1,12 +1,8 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.lib.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
-    ]
+    "declaration": false,
+    "declarationMap": false
   },
   "exclude": [
     "jest.config.ts",
@@ -19,7 +15,9 @@
     "src/**/*.test.js",
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx",
-    "src/web-component/loader.tsx"
+    "src/web-component/web-component-loader.tsx",
+    "src/web-component/index.ts"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/web-component/standalone.tsx", "src/**/*.ts", "src/**/*.tsx"]
 }
+

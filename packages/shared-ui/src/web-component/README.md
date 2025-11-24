@@ -5,7 +5,7 @@ This directory contains the web component implementation of the Pipelines compon
 ## Files
 
 - `pipelines-web-component.tsx` - Main web component implementation using `react-to-webcomponent`
-- `standalone.ts` - Standalone bundle entry point
+- `standalone.tsx` - Standalone bundle entry point
 - `index.ts` - Module exports
 
 ## Usage

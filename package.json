@@ -2,7 +2,9 @@
   "name": "@sk8-workspace/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:web-component": "rollup -c packages/shared-ui/rollup.standalone.config.cjs"
+  },
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.14.5",
