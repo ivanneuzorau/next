@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd ../.. && npx nx build widget-app",
+  "outputDirectory": ".next",
+  "installCommand": "cd ../.. && npm install",
+  "framework": "nextjs"
+}
+

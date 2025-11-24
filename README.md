@@ -10,7 +10,8 @@ Monorepo with a pipeline management component that can be used in two modes:
 /
 ├── apps/
 │   ├── admin-app/        # SK8 Admin (Next.js 15)
-│   └── vendor-app/       # Vendor App (Next.js 15)
+│   ├── vendor-app/       # Vendor App (Next.js 15)
+│   └── widget-app/       # Widget App - Embeddable widget (Next.js 15)
 ├── packages/
 │   └── shared-ui/        # Shared Pipelines component
 └── nx.json               # Nx configuration
@@ -47,6 +48,20 @@ npx nx dev vendor-app --port=3001
 ```
 
 Open [http://localhost:3001](http://localhost:3001)
+
+### Widget App (Embeddable Widget)
+
+```bash
+npx nx dev widget-app --port=3002
+```
+
+Open [http://localhost:3002](http://localhost:3002)
+
+**Usage with parameters:**
+- Embedded mode: `http://localhost:3002/?mode=embedded&theme=blue&tenant-id=xxx-ten-1`
+- Admin mode: `http://localhost:3002/?mode=admin&theme=green`
+
+See `WIDGET_APP.md` for detailed documentation.
 
 ## API
 

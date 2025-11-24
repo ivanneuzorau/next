@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  #__next {
+    height: 100%;
+  }
+}
+
+/* Ensure web component takes full width */
+sk8-pipelines {
+  display: block;
+  width: 100%;
+}
