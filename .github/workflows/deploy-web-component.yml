@@ -44,6 +44,11 @@ jobs:
           mkdir -p dist/packages/shared-ui/web-component
           cp packages/shared-ui/example-standalone.html dist/packages/shared-ui/web-component/index.html
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        with:
+          enablement: true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
