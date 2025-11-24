@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'packages/shared-ui/src/web-component/**'
+      - 'packages/shared-ui/rollup.standalone.config.cjs'
       - 'packages/shared-ui/rollup.web-component.config.cjs'
       - '.github/workflows/deploy-web-component.yml'
   workflow_dispatch:
@@ -43,9 +44,6 @@ jobs:
           mkdir -p dist/packages/shared-ui/web-component
           cp packages/shared-ui/example-standalone.html dist/packages/shared-ui/web-component/index.html
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -61,4 +59,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
