@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK8 Pipelines Web Component Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Ensure component takes full width */
+    sk8-pipelines {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div class="container mx-auto p-4 md:p-8">
+    <h1 class="text-2xl font-bold mb-6">SK8 Pipelines Web Component Demo</h1>
+    
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Embedded Mode (Blue Theme)</h2>
+      <sk8-pipelines 
+        mode="embedded" 
+        theme="blue" 
+        tenant-id="xxx-ten-1">
+      </sk8-pipelines>
+    </div>
+    
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Admin Mode (Green Theme)</h2>
+      <sk8-pipelines 
+        mode="admin" 
+        theme="green">
+      </sk8-pipelines>
+    </div>
+    
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">With Custom API Base URL</h2>
+      <sk8-pipelines 
+        mode="embedded" 
+        theme="blue" 
+        tenant-id="xxx-ten-1"
+        api-base-url="https://your-api-proxy.com">
+      </sk8-pipelines>
+    </div>
+  </div>
+  
+  <!-- 
+    In production, you would import the built web component:
+    <script type="module">
+      import './dist/pipelines-web-component.js';
+    </script>
+    
+    For development with bundler, import from source:
+  -->
+  <script type="module">
+    // This would be replaced with the actual build output
+    // import { PipelinesWebComponent } from './dist/web-component/index.js';
+    console.log('Import the web component from your build output');
+  </script>
+</body>
+</html>
+

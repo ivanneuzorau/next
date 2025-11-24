@@ -48,3 +48,6 @@ Thumbs.db
 out
 apps/*/.next
 apps/*/out
+
+# Web component build (will be deployed to GitHub Pages)
+# dist/packages/shared-ui/web-component

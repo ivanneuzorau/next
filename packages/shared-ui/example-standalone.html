@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK8 Pipelines Standalone Web Component</title>
+  <!-- Tailwind CSS CDN (required for styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Ensure component takes full width */
+    sk8-pipelines {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div class="container mx-auto p-4 md:p-8">
+    <h1 class="text-2xl font-bold mb-6">SK8 Pipelines Standalone Web Component</h1>
+    <p class="mb-6 text-gray-600">
+      This is a standalone example. The web component is loaded from GitHub Pages CDN.
+      No React, Next.js, or build tools required - just include the script!
+    </p>
+    <p class="mb-6 text-sm text-gray-500">
+      CDN URL: <code class="bg-gray-200 px-2 py-1 rounded">https://ivanneuzorau.github.io/next/sk8-pipelines.js</code>
+    </p>
+    
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Embedded Mode (Blue Theme)</h2>
+      <sk8-pipelines 
+        mode="embedded" 
+        theme="blue" 
+        tenant-id="xxx-ten-1"
+        api-base-url="">
+      </sk8-pipelines>
+    </div>
+    
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Admin Mode (Green Theme)</h2>
+      <sk8-pipelines 
+        mode="admin" 
+        theme="green"
+        api-base-url="">
+      </sk8-pipelines>
+    </div>
+  </div>
+  
+  <!-- 
+    Standalone web component bundle from CDN
+    This single file includes React, ReactDOM, and all dependencies
+    Just include this script and use <sk8-pipelines> anywhere!
+  -->
+  <script src="https://ivanneuzorau.github.io/next/sk8-pipelines.js"></script>
+  
+  <script>
+    // Optional: Configure API base URL globally
+    // If you have a proxy server, set it here:
+    // window.SK8_PIPELINES_API_BASE = 'https://your-api-proxy.com';
+  </script>
+</body>
+</html>

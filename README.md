@@ -110,3 +110,37 @@ npx nx build vendor-app
 ## Development
 
 The component is located in `packages/shared-ui/src/ui/pipelines/` and can be used in both applications with different configurations.
+
+## Standalone Web Component
+
+The Pipelines component can also be built as a standalone web component - a single JavaScript file that can be used in any HTML page without React or build tools.
+
+### Building Standalone Version
+
+```bash
+npx nx build-web-component shared-ui
+```
+
+This creates `dist/packages/shared-ui/web-component/sk8-pipelines.js` - a single file containing React, ReactDOM, and all component code.
+
+### Using Standalone Version
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <sk8-pipelines 
+    mode="embedded" 
+    theme="blue" 
+    tenant-id="xxx-ten-1">
+  </sk8-pipelines>
+  
+  <script src="./sk8-pipelines.js"></script>
+</body>
+</html>
+```
+
+See `packages/shared-ui/STANDALONE.md` for detailed documentation.

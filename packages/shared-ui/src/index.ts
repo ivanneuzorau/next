@@ -12,3 +12,6 @@ export * from './api';
 
 // Types
 export * from './types';
+
+// Web Component
+export * from './web-component';

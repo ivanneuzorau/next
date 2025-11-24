@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Pipeline } from '../types';
 import { fetchPipelines } from '../api/pipelines';
 
-export function usePipelines(tenantId?: string) {
+export function usePipelines(tenantId?: string, apiBaseUrl?: string) {
   const [pipelines, setPipelines] = useState<Pipeline[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -16,7 +16,7 @@ export function usePipelines(tenantId?: string) {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchPipelines(tenantId);
+        const data = await fetchPipelines(tenantId, apiBaseUrl);
         if (!cancelled) {
           setPipelines(data);
         }
@@ -36,7 +36,7 @@ export function usePipelines(tenantId?: string) {
     return () => {
       cancelled = true;
     };
-  }, [tenantId]);
+  }, [tenantId, apiBaseUrl]);
 
   return { pipelines, loading, error };
 }

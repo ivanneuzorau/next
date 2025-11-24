@@ -7,9 +7,19 @@ import { PipelinesProps } from '../../types';
 import { DesktopTable } from './desktop-table';
 import { MobileCards } from './mobile-cards';
 
-export function Pipelines({ mode, theme, tenantId }: PipelinesProps) {
+export interface PipelinesPropsWithApi extends PipelinesProps {
+  apiBaseUrl?: string;
+}
+
+export function Pipelines({
+  mode,
+  theme,
+  tenantId,
+  apiBaseUrl,
+}: PipelinesPropsWithApi) {
   const { pipelines: initialPipelines, loading, error } = usePipelines(
-    mode === 'embedded' ? tenantId : undefined
+    mode === 'embedded' ? tenantId : undefined,
+    apiBaseUrl
   );
   const [pipelines, setPipelines] = useState(initialPipelines);
   const { colors, themeStyle } = useThemeColors(theme);
