@@ -1,7 +1,13 @@
-import { Pipelines } from '@sk8-workspace/shared-ui';
+'use client';
+
+import { useState } from 'react';
+import Script from 'next/script';
 import { MainContentProps } from './types';
+import '../../types/web-components';
 
 export function MainContent({ tenantId }: MainContentProps) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <main className="flex-1 p-4 md:p-8 bg-white">
       <div className="mb-4 md:mb-6">
@@ -13,7 +19,22 @@ export function MainContent({ tenantId }: MainContentProps) {
         </h2>
       </div>
 
-      <Pipelines mode="embedded" theme="blue" tenantId={tenantId} />
+      <Script
+        src="https://ivanneuzorau.github.io/next/sk8-pipelines.js"
+        strategy="afterInteractive"
+        onLoad={() => setLoaded(true)}
+      />
+      {loaded ? (
+        // @ts-ignore - web component type
+        <sk8-pipelines
+          mode="embedded"
+          theme="blue"
+          tenant-id={tenantId}
+          api-base-url=""
+        />
+      ) : (
+        <div className="p-6">Loading pipelines component...</div>
+      )}
     </main>
   );
 }
